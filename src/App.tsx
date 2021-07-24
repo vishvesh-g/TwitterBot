@@ -74,8 +74,7 @@ export default function App() {
         onClick={async () => {
           try {
             await axios.post<void>(`http://localhost:8000/update/${label}`, {
-              title: label,
-              data
+              data: data.toString()
             });
           } catch (err) {
             console.error(err);
@@ -83,6 +82,17 @@ export default function App() {
         }}
       >
         Handle Update
+      </button>
+      <button
+        onClick={async () => {
+          try {
+            await axios.get<void>(`http://localhost:8000/send/${label}`, {});
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+      >
+        send message
       </button>
     </div>
   );
