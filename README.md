@@ -1,2 +1,2 @@
 # TwitterBot
-Created with CodeSandbox
+Internship Project
